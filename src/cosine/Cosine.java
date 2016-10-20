@@ -115,7 +115,7 @@ public class Cosine {
         System.out.println(pembilang);
         System.out.println("=");
         BigDecimal hasil;
-        hasil = penyebut.divide(pembilang);
+        hasil = penyebut.divide(pembilang, 2, RoundingMode.HALF_UP);
         System.out.println(hasil);
         
         
