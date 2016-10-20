@@ -9,6 +9,7 @@ import com.sun.org.apache.xml.internal.utils.StylesheetPIHandler;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.math.RoundingMode;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -105,11 +106,12 @@ public class Cosine {
             }
         }
         
-        BigDecimal pembilang = new BigDecimal("0");
+        BigDecimal pembilang = new BigDecimal("1");
         for (int i = 0; i < pembilang_pertama.size(); i++) {
             double ht = 0;
+            
             ht = pembilang_pertama.get(i);
-            pembilang = pembilang.add(BigDecimal.valueOf(ht));
+            pembilang = pembilang.multiply(BigDecimal.valueOf(ht));
         }
         System.out.println("/");
         System.out.println(pembilang);
@@ -121,6 +123,7 @@ public class Cosine {
         
         
 //        for (int i = 0; i < hitung_kata.length; i++) {
+//            System.out.print(index.get(i) + " > ");
 //            for (int j = 0; j < hitung_kata[i].length; j++) {
 //                System.out.print(hitung_kata[i][j]);
 //            }
@@ -129,7 +132,7 @@ public class Cosine {
 //        
 //        
 //        System.out.println(dokumen.size());
-//        
+        
     }
     
     private static void konek() throws SQLException {
